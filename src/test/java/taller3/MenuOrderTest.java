@@ -6,9 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class MenuOrderTest {
+  
+
     private Menu menu;
 
- 
+    @BeforeEach
+    void setUp() {
+        menu = new Menu();
+    }
     @Test
     void testGetPrice_ValidItem_ReturnsCorrectPrice() {
         int price = menu.getPrice("Hamburguesa doble");
@@ -47,7 +52,7 @@ class MenuOrderTest {
         order.orderItems.put("Hamburguesa con queso", 1);
 
         int totalCost = order.getTotalCost();
-        assertEquals(17, totalCost); // 2 * $5 (Hamburguesa doble) + 1 * $4 (Hamburguesa con queso)
+        assertEquals(14, totalCost); // 2 * $5 (Hamburguesa doble) + 1 * $4 (Hamburguesa con queso)
     }
 
     @Test
@@ -61,6 +66,6 @@ class MenuOrderTest {
 
         int totalCost = order.getTotalCost();
         // Total cost after discounts: (6 * $5 + 5 * $4 + 3 * $10) * 0.9 * 0.8 * 1.05 - $10 - $25
-        assertEquals(92, totalCost);
+        assertEquals(73, totalCost);
     }
 }

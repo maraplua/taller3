@@ -8,15 +8,7 @@ import org.junit.jupiter.api.Test;
 class MenuOrderTest {
     private Menu menu;
 
-    @BeforeEach
-    void setUp() {
-        menu = new Menu();
-        // Aquí puedes agregar las definiciones de los elementos del menú para las pruebas
-        menu.addItem("Hamburguesa doble", 5);
-        menu.addItem("Hamburguesa con queso", 4);
-        menu.addItem("Hamburguesa Especial", 10);
-    }
-
+ 
     @Test
     void testGetPrice_ValidItem_ReturnsCorrectPrice() {
         int price = menu.getPrice("Hamburguesa doble");
